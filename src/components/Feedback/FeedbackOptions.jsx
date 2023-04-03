@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'components/Statistics/Statistics.styled';
 
@@ -8,7 +7,9 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
       {options.map(option => (
         <Button
           type="Button"
-          onClick={onLeaveFeedback}
+          onClick={() => {
+            onLeaveFeedback(option);
+          }}
           key={option}
           name={option}
         >
